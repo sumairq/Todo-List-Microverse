@@ -1,8 +1,10 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# To Do List Application
 
-> Description the project.
+![screenshot](./screenshot.png)
+
+> A simple to do list application made with Html, CSS, JavaScript.
 
 
 ## Built With
