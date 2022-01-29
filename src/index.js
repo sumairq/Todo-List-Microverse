@@ -3,8 +3,6 @@ import Item from './modules/item.js';
 import clear from './modules/clearCompleted.js';
 import './style.css';
 
-
-
 const tasksCol = new TodoCollection();
 const input = document.querySelector('.task-input');
 
@@ -28,4 +26,3 @@ clearButton.addEventListener('click', () => {
   clear(tasksCol);
   tasksCol.setStorage();
 });
-
