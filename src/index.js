@@ -1,6 +1,9 @@
 import TodoCollection from './modules/todoCollection.js';
 import Item from './modules/item.js';
+import clear from './modules/clearCompleted.js';
 import './style.css';
+
+
 
 const tasksCol = new TodoCollection();
 const input = document.querySelector('.task-input');
@@ -18,3 +21,11 @@ window.addEventListener('keydown', (e) => {
     input.value = '';
   }
 });
+
+const clearButton = document.querySelector('.clear-completed');
+
+clearButton.addEventListener('click', () => {
+  clear(tasksCol);
+  tasksCol.setStorage();
+});
+
