@@ -26,7 +26,7 @@ To get a local copy up and running follow these simple example steps.
 Install Webpack package bundler.
 
 ### Setup
-Run https://github.com/lisandroseia/to-do-list.git to clon the repository
+Clone this link [repo](https://github.com/sumairq/to-do-list.git) to setup the repository.
 
 ### Install
 run the following commands:
@@ -45,7 +45,7 @@ npm run start
 
 ### Deployment
 
-[Deployment](https://sumairq.github.io/Todo-List-Microverse/)
+[Deployment] (https://sumairq.github.io/Todo-List-Microverse/)
 
 ## Authors
 
