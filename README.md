@@ -9,9 +9,9 @@
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+ HTML, CSS & JS
+- Webpack FontAwesome
+- Github
 
 ## Live Demo (if available)
 
@@ -20,19 +20,26 @@
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+Install Webpack package bundler.
 
 ### Setup
+Run https://github.com/lisandroseia/to-do-list.git to clon the repository
 
 ### Install
+run the following commands:
+npm install webpack webpack-cli --save-dev
+npm install --save-dev html-webpack-plugin
+npm install --save-dev style-loader css-loader
+npm install --save-dev webpack-dev-server
+
+
 
 ### Usage
+Use the following commands to spin up the project.  
+npm run start
 
 ### Run tests
 
@@ -42,17 +49,11 @@ To get a local copy up and running follow these simple example steps.
 
 ## Authors
 
-👤 **Author1**
+👤 **Sumair Qaisar Jadoon**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@sumairq](https://github.com/sumairq)
+- Twitter: [@sumair_qaisar](https://twitter.com/sumair_qaisar)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/sumair-qaisar-jadoon-84a877164)
 
 ## 🤝 Contributing
 
@@ -66,9 +67,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- For this project I followed the Minimalist design for to do list, that is not existing anymore,
+This is the demo for the Todo List [Minimalist](https://www.youtube.com/watch?v=AcUd-_Yjjqg)
 
 ## 📝 License
 
