@@ -1,6 +1,6 @@
 import TodoCollection from './modules/todoCollection.js';
 import Item from './modules/item.js';
-import {clear, removeElements} from './modules/clearCompleted.js';
+import { clear, removeElements } from './modules/clearCompleted.js';
 import './style.css';
 
 const tasksCol = new TodoCollection();
@@ -23,8 +23,8 @@ window.addEventListener('keydown', (e) => {
 const clearButton = document.querySelector('.clear-completed');
 
 clearButton.addEventListener('click', () => {
-  const originalArray = tasksCol.list
-  tasksCol.list = clear(tasksCol)
+  const originalArray = tasksCol.list;
+  tasksCol.list = clear(tasksCol);
   tasksCol.setStorage();
-  removeElements(originalArray)
+  removeElements(originalArray);
 });
