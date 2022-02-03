@@ -1,4 +1,4 @@
-const todoList = document.querySelector('.todo-list');
+// const todoList = document.querySelector('.todo-list');
 
 export default class TodoCollection {
   constructor(list = []) {
@@ -15,7 +15,12 @@ export default class TodoCollection {
     this.setStorage();
   }
 
+  addition(x,y){
+    return x+y
+  }
+
   display = (data) => {
+    const todoList = document.querySelector('.todo-list');
     const todoItem = document.createElement('div');
     todoItem.classList.add('flex-item');
 
@@ -48,6 +53,7 @@ export default class TodoCollection {
   }
 
   remove() {
+    const todoList = document.querySelector('.todo-list');
     const rmvBtns = document.querySelectorAll('.remove-btn');
     rmvBtns[rmvBtns.length - 1].addEventListener('click', (e) => {
       this.removeTask(e.target);
@@ -110,3 +116,4 @@ export default class TodoCollection {
     });
   }
 }
+
