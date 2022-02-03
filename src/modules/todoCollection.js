@@ -1,5 +1,3 @@
-// const todoList = document.querySelector('.todo-list');
-
 export default class TodoCollection {
   constructor(list = []) {
     this.list = list;
@@ -7,43 +5,44 @@ export default class TodoCollection {
 
   create(data) {
     this.list.push(data);
-    this.display(data);
+    this.setStorage();
+  }
+  
+  addition(x,y){
+    return x+y
+  }
+  
+  display = (data) => {
+    this.create(data);
+    const todoList = document.querySelector('.todo-list');
+    const todoItem = document.createElement('div');
+    todoItem.classList.add('flex-item');
+    
+    if (data.completed) {
+      todoItem.innerHTML = `<div class="flex-container">
+      <div class="input">
+      <input class="check" type="checkbox" name="${data.description}" id="${data.description}" CHECKED>
+      <p class="task-desc checked" contenteditable for="${data.description}">${data.description}</p>
+      </div>
+      <i class="fas fa-trash remove-btn disabled trash"></i>
+      <i class="fas fa-ellipsis-v dots"></i></div>`;
+    } else {
+      todoItem.innerHTML = `<div class="flex-container">
+      <div class="input">
+      <input class="check" type="checkbox" name="${data.description}" id="${data.description}">
+      <p class="task-desc" contenteditable for="${data.description}">${data.description}</p>
+      </div>
+      <i class="fas fa-trash remove-btn disabled trash"></i>
+      <i class="fas fa-ellipsis-v dots"></i></div>`;
+    }
+    todoList.appendChild(todoItem);
     this.arrange();
     this.remove();
     this.edit();
     this.markComplete();
     this.setStorage();
   }
-
-  addition(x,y){
-    return x+y
-  }
-
-  display = (data) => {
-    const todoList = document.querySelector('.todo-list');
-    const todoItem = document.createElement('div');
-    todoItem.classList.add('flex-item');
-
-    if (data.completed) {
-      todoItem.innerHTML = `<div class="flex-container">
-        <div class="input">
-        <input class="check" type="checkbox" name="${data.description}" id="${data.description}" CHECKED>
-        <p class="task-desc checked" contenteditable for="${data.description}">${data.description}</p>
-        </div>
-        <i class="fas fa-trash remove-btn disabled trash"></i>
-        <i class="fas fa-ellipsis-v dots"></i></div>`;
-    } else {
-      todoItem.innerHTML = `<div class="flex-container">
-        <div class="input">
-        <input class="check" type="checkbox" name="${data.description}" id="${data.description}">
-        <p class="task-desc" contenteditable for="${data.description}">${data.description}</p>
-        </div>
-        <i class="fas fa-trash remove-btn disabled trash"></i>
-        <i class="fas fa-ellipsis-v dots"></i></div>`;
-    }
-    todoList.appendChild(todoItem);
-  }
-
+  
   arrange() {
     const rmvBtns = document.querySelectorAll('.remove-btn');
     for (let i = 0; i < rmvBtns.length; i += 1) {
