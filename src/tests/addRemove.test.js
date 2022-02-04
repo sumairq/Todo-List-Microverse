@@ -1,3 +1,9 @@
+/**
+ * @jest-environment jsdom
+ */
+
+
+
 // const todoCollection = require('../modules/todoCollection')
 import todoCollection from '../modules/todoCollection'
 import getTasksLocalStorage from '../__mocks__/getLS';
@@ -9,10 +15,6 @@ class LocalStorageMock {
       this.store = {};
     }
   
-    // clear() {
-    //   this.store = {};
-    // }
-  
     getItem(key) {
       return this.store[key] || null;
     }
@@ -20,10 +22,6 @@ class LocalStorageMock {
     setItem(key, value) {
       this.store[key] = String(value);
     }
-  
-    // removeItem(key) {
-    //   delete this.store[key];
-    // }
   }
 
 describe("Add", ()=> {
@@ -32,7 +30,6 @@ describe("Add", ()=> {
         // ARRANGE
         const coll = new todoCollection()
         const task = {description: "A new test task", completed: false, index: 0};
-        // const tasksContainer = [];
         // ACT
         coll.create(task);
         // ASSERT
@@ -54,7 +51,6 @@ describe("Add", ()=> {
       test('New task description inserted in task container is abc', () => {
           //ARRANGE
           const coll = new todoCollection()
-    // const taskData = {description: "A new test task", completed: false, index: 0}
           const tasksContainer = [{ description: 'abc', completed: true, index: 0 }];
           //ACT
           const result = coll.create(tasksContainer[0]);
@@ -64,5 +60,42 @@ describe("Add", ()=> {
       })
 }
 )
+
+describe("Delete task function tests", () => {
+    test('The length of taskContainer after deleting its only task, is 0', () => {
+        //ARRANGE
+        document.body.innerHTML = ` <ul class="todo-list flex-container">
+        <div class="flex-item" data-value="0">
+        <div class="flex-container">
+        <div class="input">
+        <input class="check" type="checkbox" name="description" id="description">
+        <p class="task-desc" contenteditable for="description">description</p>
+        </div>
+        <i class="fas fa-trash remove-btn disabled trash"></i>
+        <i class="fas fa-ellipsis-v dots"></i></div>
+        </div>
+        </ul>`;
+
+        const taskToRemove = document.querySelector('.flex-item');
+        const coll = new todoCollection()
+        const tasksContainer = [
+            {
+              description: 'abc',
+              completed: false,
+              index: 0,
+            },
+          ]
+        //ACT
+
+       coll.create(tasksContainer[0]);
+       coll.removeTask(taskToRemove)
+
+        //ASSERT
+        expect(coll.list.length).toBe(0)
+
+
+
+    })
+})
 
 global.localStorage = new LocalStorageMock();
