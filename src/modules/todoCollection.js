@@ -12,19 +12,15 @@ export default class TodoCollection {
         tasksList: this.list,
       }),
     );
-    return data
+    return data;
   }
-  
-  addition(x,y){
-    return x+y
-  }
-  
+
   display = (data) => {
     this.create(data);
     const todoList = document.querySelector('.todo-list');
     const todoItem = document.createElement('div');
     todoItem.classList.add('flex-item');
-    
+
     if (data.completed) {
       todoItem.innerHTML = `<div class="flex-container">
       <div class="input">
@@ -49,7 +45,7 @@ export default class TodoCollection {
     this.markComplete();
     this.setStorage();
   }
-  
+
   arrange() {
     const rmvBtns = document.querySelectorAll('.remove-btn');
     for (let i = 0; i < rmvBtns.length; i += 1) {
@@ -122,4 +118,3 @@ export default class TodoCollection {
     });
   }
 }
-

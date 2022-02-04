@@ -10,7 +10,6 @@ if (localStorage.getItem('tasksList')) {
   const storageItems = JSON.parse(localStorage.getItem('tasksList')).tasksList;
   storageItems.forEach((task) => {
     tasksCol.display(new Item(task.index, task.description, task.completed));
-
   });
 }
 
