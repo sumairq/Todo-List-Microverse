@@ -17,7 +17,7 @@
 
 ## Live Demo (if available)
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](<https://sumairq.github.io/Todo-List-Microverse/>))
 
 ## Getting Started
 
@@ -29,7 +29,7 @@ Install Webpack package bundler.
 
 ### Setup
 
-Clone this link [repo](https://github.com/sumairq/to-do-list.git) to setup the repository.
+Clone this link [repo](https://github.com/sumairq/Todo-List-Microverse.git) to setup the repository.
 
 ### Install
 
@@ -75,9 +75,6 @@ You can test the app by yourself. Just follow the next steps:
 
 > The project has already some testing scripts on it, you may find them under the folder "src/tests" & "src/_mocks_"
 
-### Deployment
-
-[Deployment] (<https://sumairq.github.io/Todo-List-Microverse/>)
 
 ## Authors
 
