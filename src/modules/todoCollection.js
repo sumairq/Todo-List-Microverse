@@ -5,7 +5,14 @@ export default class TodoCollection {
 
   create(data) {
     this.list.push(data);
-    this.setStorage();
+    // this.setStorage();
+    localStorage.setItem(
+      'tasksList',
+      JSON.stringify({
+        tasksList: this.list,
+      }),
+    );
+    return data
   }
   
   addition(x,y){
