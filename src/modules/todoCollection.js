@@ -42,7 +42,7 @@ export default class TodoCollection {
     this.arrange();
     this.remove();
     this.edit();
-    this.markComplete();
+    this.addStatusListener();
     this.setStorage();
   }
 
@@ -108,13 +108,30 @@ export default class TodoCollection {
     });
   }
 
-  markComplete() {
+
+  addStatusListener(){
     const checker = document.querySelectorAll('.check');
     checker[checker.length - 1].addEventListener('change', (e) => {
       e.target.parentNode.children[1].classList.toggle('checked');
-      const index = e.target.parentNode.parentNode.children[1].getAttribute('data-value');
+      this.markComplete(e)
+  })
+}
+
+  markComplete(e, taskToMark) {
+  
+    if (typeof e === "undefined"){
+    this.markCompleted(taskToMark)
+    } else{
+    const index = e.target.parentNode.parentNode.children[1].getAttribute('data-value');
       this.list[index].completed = !this.list[index].completed;
       this.setStorage();
-    });
+    }
+
+  }
+
+  markCompleted(taskToMark){
+    const index = taskToMark.parentNode.parentNode.parentNode.getAttribute('data-value')
+    this.list[index].completed = !this.list[index].completed;
+    this.setStorage();
   }
 }
