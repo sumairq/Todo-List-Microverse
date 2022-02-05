@@ -24,7 +24,7 @@ const clearButton = document.querySelector('.clear-completed');
 
 clearButton.addEventListener('click', () => {
   const originalArray = tasksCol.list;
-  tasksCol.list = clear(tasksCol);
+  tasksCol.list = clear(tasksCol.list);
   tasksCol.setStorage();
   removeElements(originalArray);
 });

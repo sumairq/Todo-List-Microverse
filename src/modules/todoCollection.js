@@ -102,50 +102,45 @@ export default class TodoCollection {
     });
 
     editable[editable.length - 1].addEventListener('input', (e) => {
-     this.editTarget(e)
+      this.editTarget(e);
     });
   }
 
-  editTarget(e, taskToEdit){
-   if(typeof e === "undefined"){
-     edit(taskToEdit)
-   }else{
-    const index = e.target.parentNode.nextSibling.nextSibling.getAttribute('data-value');
-    this.list[index].description = e.target.textContent;
+  editTarget(e, taskToEdit) {
+    if (typeof e === 'undefined') {
+      this.edit(taskToEdit);
+    } else {
+      const index = e.target.parentNode.nextSibling.nextSibling.getAttribute('data-value');
+      this.list[index].description = e.target.textContent;
+      this.setStorage();
+    }
+  }
+
+  edit(taskToEdit) {
+    this.list[taskToEdit.index].description = taskToEdit.description;
     this.setStorage();
-   }
   }
 
-  edit(taskToEdit){
-  this.list[taskToEdit.index].description = taskToEdit.description;
-  this.setStorage();
-  }
-
-
-
-
-  addStatusListener(){
+  addStatusListener() {
     const checker = document.querySelectorAll('.check');
     checker[checker.length - 1].addEventListener('change', (e) => {
       e.target.parentNode.children[1].classList.toggle('checked');
-      this.markComplete(e)
-  })
-}
+      this.markComplete(e);
+    });
+  }
 
   markComplete(e, taskToMark) {
-  
-    if (typeof e === "undefined"){
-    this.markCompleted(taskToMark)
-    } else{
-    const index = e.target.parentNode.parentNode.children[1].getAttribute('data-value');
+    if (typeof e === 'undefined') {
+      this.markCompleted(taskToMark);
+    } else {
+      const index = e.target.parentNode.parentNode.children[1].getAttribute('data-value');
       this.list[index].completed = !this.list[index].completed;
       this.setStorage();
     }
-
   }
 
-  markCompleted(taskToMark){
-    const index = taskToMark.parentNode.parentNode.parentNode.getAttribute('data-value')
+  markCompleted(taskToMark) {
+    const index = taskToMark.parentNode.parentNode.parentNode.getAttribute('data-value');
     this.list[index].completed = !this.list[index].completed;
     this.setStorage();
   }
