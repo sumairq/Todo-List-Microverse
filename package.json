@@ -1,5 +1,5 @@
 {
-  "name": "webpack-boilerplate",
+  "name": "todo-list-microverse",
   "version": "1.0.0",
   "description": "",
   "private": "true",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sumairq/Webpack-Boilerplate.git"
+    "url": "git+https://github.com/sumairq/Todo-List-Microverse.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sumairq/Webpack-Boilerplate/issues"
+    "url": "https://github.com/sumairq/Todo-List-Microverse/issues"
   },
-  "homepage": "https://github.com/sumairq/Webpack-Boilerplate#readme",
+  "homepage": "https://github.com/sumairq/Todo-List-Microverse#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.16.11",
     "babel-eslint": "^10.1.0",
@@ -26,19 +26,19 @@
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.25.4",
-    "hint": "^6.1.9",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^27.4.7",
     "style-loader": "^3.3.1",
-    "stylelint": "^13.13.1",
-    "stylelint-config-standard": "^21.0.0",
-    "stylelint-csstree-validator": "^1.9.0",
-    "stylelint-scss": "^3.21.0",
+    "stylelint": "^14.3.0",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-csstree-validator": "^2.0.0",
+    "stylelint-scss": "^4.1.0",
     "webpack": "^5.67.0",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.7.3"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "path": "^0.12.7"
   }
 }

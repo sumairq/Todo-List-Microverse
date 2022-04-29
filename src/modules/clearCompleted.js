@@ -1,7 +1,7 @@
 const todoList = document.querySelector('.todo-list');
 
 export function clear(list) {
-  const arr = list.list.filter((task) => task.completed === false);
+  const arr = list.filter((task) => task.completed === false);
   return arr;
 }
 
